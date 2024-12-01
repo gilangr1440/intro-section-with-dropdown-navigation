@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="styles/CSS/css-reset.css" />
+    <link rel="stylesheet" href="styles/CSS/style.css" />
+
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <img src="images/logo.svg" alt="logo" class="header__logo" />
+      <button class="header__sidebar-button">
+        <img src="images/icon-menu.svg" alt="menu-icon" class="header__sidebar-icon" />
+      </button>
+      <div class="sidebar">
+        <div class="sidebar__bg"></div>
+        <nav class="sidebar__navigation">
+          <button class="sidebar__close-button">
+            <img src="images/icon-close-menu.svg" alt="close-icon" class="sidebar__close-icon" />
+          </button>
+          <div class="sidebar__dropdown">
+            <a href="#" class="sidebar__nav-link sidebar__nav-link_features">
+              Features
+              <img src="images/icon-arrow-down.svg" alt="dropdown-icon" class="sidebar__dropdown-icon-down" />
+              <img src="images/icon-arrow-up.svg" alt="dropdown-icon" class="sidebar__dropdown-icon-up" />
+            </a>
+            <div class="sidebar__dropdown-cont sidebar__dropdown-cont_features">
+              <a href="#" class="sidebar__dropdown-list">
+                <img src="images/icon-todo.svg" alt="dropdown-list-icon" class="sidebar__dropdown-list-icon" />
+                <span class="sidebar__dropdown-text">Todo List</span>
+              </a>
+              <a href="#" class="sidebar__dropdown-list">
+                <img src="images/icon-calendar.svg" alt="dropdown-list-icon" class="sidebar__dropdown-list-icon" />
+                <span class="sidebar__dropdown-text">Calendar</span>
+              </a>
+              <a href="#" class="sidebar__dropdown-list">
+                <img src="images/icon-reminders.svg" alt="dropdown-list-icon" class="sidebar__dropdown-list-icon" />
+                <span class="sidebar__dropdown-text">Reminders</span>
+              </a>
+              <a href="#" class="sidebar__dropdown-list">
+                <img src="images/icon-planning.svg" alt="dropdown-list-icon" class="sidebar__dropdown-list-icon" />
+                <span class="sidebar__dropdown-text">Planning</span>
+              </a>
+            </div>
+          </div>
+          <div class="sidebar__dropdown">
+            <a href="#" class="sidebar__nav-link sidebar__nav-link_company">
+              Company
+              <img src="images/icon-arrow-down.svg" alt="dropdown-icon" class="sidebar__dropdown-icon-down" />
+              <img src="images/icon-arrow-up.svg" alt="dropdown-icon" class="sidebar__dropdown-icon-up" />
+            </a>
+            <div class="sidebar__dropdown-cont sidebar__dropdown-cont_company">
+              <a href="#" class="sidebar__dropdown-list">
+                <span class="sidebar__dropdown-text">History</span>
+              </a>
+              <a href="#" class="sidebar__dropdown-list">
+                <span class="sidebar__dropdown-text">Our Team</span>
+              </a>
+              <a href="#" class="sidebar__dropdown-list">
+                <span class="sidebar__dropdown-text">Blog</span>
+              </a>
+            </div>
+          </div>
+          <a href="#" class="sidebar__nav-link">Careers</a>
+          <a href="#" class="sidebar__nav-link">About</a>
+          <div class="sidebar__button-cont">
+            <a href="#" class="sidebar__button">Login</a>
+            <a href="#" class="sidebar__button sidebar__button_register">Register</a>
+          </div>
+        </nav>
+      </div>
+      <nav class="header__navbar">
+        <div class="header__dropdown">
+          <a href="#" class="header__nav-link header__nav-link_features">
+            Features
+            <img src="images/icon-arrow-down.svg" alt="dropdown-icon" class="header__dropdown-icon-down" />
+            <img src="images/icon-arrow-up.svg" alt="dropdown-icon" class="header__dropdown-icon-up" />
+          </a>
+          <div class="header__dropdown-cont" id="dropdownFeatures">
+            <a href="#" class="header__dropdown-list">
+              <img src="images/icon-todo.svg" alt="dropdown-list-icon" class="header__dropdown-list-icon" />
+              <span class="header__dropdown-text">Todo List</span>
+            </a>
+            <a href="#" class="header__dropdown-list">
+              <img src="images/icon-calendar.svg" alt="dropdown-list-icon" class="header__dropdown-list-icon" />
+              <span class="header__dropdown-text">Calendar</span>
+            </a>
+            <a href="#" class="header__dropdown-list">
+              <img src="images/icon-reminders.svg" alt="dropdown-list-icon" class="header__dropdown-list-icon" />
+              <span class="header__dropdown-text">Reminders</span>
+            </a>
+            <a href="#" class="header__dropdown-list">
+              <img src="images/icon-planning.svg" alt="dropdown-list-icon" class="header__dropdown-list-icon" />
+              <span class="header__dropdown-text">Planning</span>
+            </a>
+          </div>
+        </div>
+        <div class="header__dropdown">
+          <a href="#" class="header__nav-link header__nav-link_company">
+            Company
+            <img src="images/icon-arrow-down.svg" alt="dropdown-icon" class="header__dropdown-icon-down" />
+            <img src="images/icon-arrow-up.svg" alt="dropdown-icon" class="header__dropdown-icon-up" />
+          </a>
+          <div class="header__dropdown-cont header__dropdown-cont_company" id="dropdownCompany">
+            <a href="#" class="header__dropdown-list">
+              <span class="header__dropdown-text">History</span>
+            </a>
+            <a href="#" class="header__dropdown-list">
+              <span class="header__dropdown-text">Our Team</span>
+            </a>
+            <a href="#" class="header__dropdown-list">
+              <span class="header__dropdown-text">Blog</span>
+            </a>
+          </div>
+        </div>
+        <a href="#" class="header__nav-link">Careers</a>
+        <a href="#" class="header__nav-link">About</a>
+      </nav>
+      <div class="header__button-cont">
+        <a href="#" class="header__login-button">Login</a>
+        <a href="#" class="header__register-button">Register</a>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="main__text-section">
+        <h1 class="main__title">
+          Make <br class="main__br-desktop" />
+          remote work
+        </h1>
+        <p class="main__desc">Get your team in sync, no matter your location. Streamline processes, create team rituals, and watch productivity soar.</p>
+        <div class="main__button-cont">
+          <a href="#" class="main__button">Learn more</a>
+        </div>
+        <div class="main__logo-cont">
+          <img src="images/client-databiz.svg" alt="main-logo" class="main__logo" />
+          <img src="images/client-audiophile.svg" alt="main-logo" class="main__logo" />
+          <img src="images/client-meet.svg" alt="main-logo" class="main__logo" />
+          <img src="images/client-maker.svg" alt="main-logo" class="main__logo" />
+        </div>
+      </section>
+      <section class="main__hero-section">
+        <img src="images/image-hero-desktop.png" alt="hero" class="main__hero-desktop" />
+        <img src="images/image-hero-mobile.png" alt="hero" class="main__hero-mobile" />
+      </section>
+    </main>
+
+    <footer class="attribution">Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://www.linkedin.com/in/gilangr1440/">Gilang Ramadhan</a>.</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
