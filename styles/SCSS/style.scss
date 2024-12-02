@@ -72,7 +72,7 @@ body {
         height: 100vh;
         width: 70%;
         background: $almost-white;
-        padding: 30px;
+        padding: 30px 30px 100px 30px;
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
@@ -122,7 +122,7 @@ body {
 
             @at-root .sidebar__dropdown-cont_features.open {
               display: flex;
-              animation: dropdownAnimation 1s;
+              animation: dropdownAnimationFeatures 1s;
               height: 250px;
               justify-content: space-evenly;
             }
@@ -134,7 +134,7 @@ body {
               justify-content: space-evenly;
             }
 
-            @keyframes dropdownAnimation {
+            @keyframes dropdownAnimationFeatures {
               from {
                 height: 0;
               }
@@ -143,7 +143,7 @@ body {
               }
             }
 
-            @keyframes dropdownAnimationClose {
+            @keyframes dropdownAnimationFeaturesClose {
               from {
                 height: 250px;
               }

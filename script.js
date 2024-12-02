@@ -19,16 +19,17 @@ const sidebarCompany = document.querySelector(".sidebar__nav-link_company");
 const sidebarCompanyDown = document.querySelector(".sidebar__nav-link_company > .sidebar__dropdown-icon-down");
 const sidebarCompanyUp = document.querySelector(".sidebar__nav-link_company > .sidebar__dropdown-icon-up");
 const sidebarCompanyDropdown = document.querySelector(".sidebar__dropdown-cont_company");
-const sidebarDropdownList = document.querySelectorAll(".sidebar__dropdown-list");
+const sidebarDropdownListFeatures = document.querySelectorAll(".sidebar__dropdown-list_features");
+const sidebarDropdownListCompany = document.querySelectorAll(".sidebar__dropdown-list_company");
 
 window.addEventListener("click", (e) => clickOutside(e));
-featuresDesktop.addEventListener("click", (e) => featuresDesktopDropdown(e));
-companyDesktop.addEventListener("click", (e) => companyDesktopDropdown(e));
+featuresDesktop.addEventListener("click", (e) => desktopDropdown(e, featuresDesktopWrapper));
+companyDesktop.addEventListener("click", (e) => desktopDropdown(e, companyDesktopWrapper));
 sidebarOpenBtn.addEventListener("click", (e) => sidebarOpen(e));
 sidebarCloseBtn.addEventListener("click", (e) => sidebarClose(e));
 sidebarBg.addEventListener("click", (e) => sidebarClose(e));
-sidebarFeatures.addEventListener("click", (e) => sidebarFeaturesDropdownFunc(e));
-sidebarCompany.addEventListener("click", (e) => sidebarCompanyDropdownFunc(e));
+sidebarFeatures.addEventListener("click", (e) => sidebarDropdownFunc(e, sidebarFeaturesDropdown, sidebarFeaturesUp, sidebarFeaturesDown, sidebarDropdownListFeatures, "Features"));
+sidebarCompany.addEventListener("click", (e) => sidebarDropdownFunc(e, sidebarCompanyDropdown, sidebarCompanyUp, sidebarCompanyUp, sidebarDropdownListCompany, "Company"));
 
 function clickOutside(e) {
   if (e.target !== featuresDesktopWrapper && e.target !== featuresDesktop) {
@@ -60,18 +61,10 @@ function changeArrow() {
   }
 }
 
-function featuresDesktopDropdown(e) {
+function desktopDropdown(e, wrapper) {
   e.preventDefault();
 
-  featuresDesktopWrapper.classList.toggle("open");
-
-  changeArrow();
-}
-
-function companyDesktopDropdown(e) {
-  e.preventDefault();
-
-  companyDesktopWrapper.classList.toggle("open");
+  wrapper.classList.toggle("open");
 
   changeArrow();
 }
@@ -98,58 +91,30 @@ function sidebarClose(e) {
   }, 800);
 }
 
-function sidebarFeaturesDropdownFunc(e) {
+function sidebarDropdownFunc(e, dropdownCont, arrowUp, arrowDown, dropdownList, type) {
   e.preventDefault();
 
-  if (!sidebarFeaturesDropdown.className.includes("open")) {
-    sidebarFeaturesDropdown.style.animation = "dropdownAnimation 1s";
-    sidebarFeaturesDown.style.display = "none";
-    sidebarFeaturesUp.style.display = "inline-block";
+  if (!dropdownCont.className.includes("open")) {
+    dropdownCont.style.animation = `dropdownAnimation${type} 1s`;
+    arrowDown.style.display = "none";
+    arrowUp.style.display = "inline-block";
 
-    for (let list of sidebarDropdownList) {
+    for (let list of dropdownList) {
       list.style.animation = "dropdownListAnimation 1s";
     }
 
-    sidebarFeaturesDropdown.classList.add("open");
+    dropdownCont.classList.add("open");
   } else {
-    sidebarFeaturesDropdown.style.animation = "dropdownAnimationClose 1s";
-    sidebarFeaturesDown.style.display = "inline-block";
-    sidebarFeaturesUp.style.display = "none";
+    dropdownCont.style.animation = `dropdownAnimation${type}Close 1s`;
+    arrowDown.style.display = "inline-block";
+    arrowUp.style.display = "none";
 
-    for (let list of sidebarDropdownList) {
+    for (let list of dropdownList) {
       list.style.animation = "dropdownListAnimationClose 1s";
     }
 
     setTimeout(() => {
-      sidebarFeaturesDropdown.classList.remove("open");
-    }, 800);
-  }
-}
-
-function sidebarCompanyDropdownFunc(e) {
-  e.preventDefault();
-
-  if (!sidebarCompanyDropdown.className.includes("open")) {
-    sidebarCompanyDropdown.style.animation = "dropdownAnimationCompany 1s";
-    sidebarCompanyDown.style.display = "none";
-    sidebarCompanyUp.style.display = "inline-block";
-
-    for (let list of sidebarDropdownList) {
-      list.style.animation = "dropdownListAnimation 1s";
-    }
-
-    sidebarCompanyDropdown.classList.add("open");
-  } else {
-    sidebarCompanyDropdown.style.animation = "dropdownAnimationCompanyClose 1s";
-    sidebarCompanyDown.style.display = "inline-block";
-    sidebarCompanyUp.style.display = "none";
-
-    for (let list of sidebarDropdownList) {
-      list.style.animation = "dropdownListAnimationClose 1s";
-    }
-
-    setTimeout(() => {
-      sidebarCompanyDropdown.classList.remove("open");
+      dropdownCont.classList.remove("open");
     }, 800);
   }
 }
