@@ -29,7 +29,7 @@ sidebarOpenBtn.addEventListener("click", (e) => sidebarOpen(e));
 sidebarCloseBtn.addEventListener("click", (e) => sidebarClose(e));
 sidebarBg.addEventListener("click", (e) => sidebarClose(e));
 sidebarFeatures.addEventListener("click", (e) => sidebarDropdownFunc(e, sidebarFeaturesDropdown, sidebarFeaturesUp, sidebarFeaturesDown, sidebarDropdownListFeatures, "Features"));
-sidebarCompany.addEventListener("click", (e) => sidebarDropdownFunc(e, sidebarCompanyDropdown, sidebarCompanyUp, sidebarCompanyUp, sidebarDropdownListCompany, "Company"));
+sidebarCompany.addEventListener("click", (e) => sidebarDropdownFunc(e, sidebarCompanyDropdown, sidebarCompanyUp, sidebarCompanyDown, sidebarDropdownListCompany, "Company"));
 
 function clickOutside(e) {
   if (e.target !== featuresDesktopWrapper && e.target !== featuresDesktop) {
